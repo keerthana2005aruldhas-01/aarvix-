@@ -1,0 +1,25 @@
+{
+  "expo": {
+    "name": "AARVIX Transport",
+    "slug": "aarvix-transport",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "backgroundColor": "#0B3B24"
+    },
+    "ios": {
+      "supportsTablet": true,
+      "bundleIdentifier": "in.aarvix.transport"
+    },
+    "android": {
+      "adaptiveIcon": {
+        "backgroundColor": "#0B3B24"
+      },
+      "package": "in.aarvix.transport"
+    },
+    "web": {
+      "bundler": "metro"
+    }
+  }
+}

@@ -1,0 +1,119 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* AARVIX LOGISTICS - GREEN BRAND THEME */
+
+:root {
+  --color-forest: #3C5410;
+  --color-forest-dark: #1A2418;
+  --color-gold: #6C9C00;
+  --color-gold-light: #A2CB2B;
+  --color-warm-bg: #FAFBF7;
+  --color-warm-surface: #F3F6EE;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+body {
+  background-color: #D9E8A8;
+  background-image:
+    radial-gradient(circle at 12% 8%, rgba(162, 203, 43, 0.55) 0%, rgba(162, 203, 43, 0) 45%),
+    radial-gradient(circle at 90% 85%, rgba(108, 130, 40, 0.45) 0%, rgba(108, 130, 40, 0) 50%),
+    linear-gradient(135deg, #EEF7D2 0%, #D9E8A8 45%, #BFD08A 100%);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#root {
+  background: transparent;
+}
+body {
+  color: #1A2418;
+  font-family: 'Inter', sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Plus Jakarta Sans', 'Inter', sans-serif;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #F3F6EE;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #86AA3E;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6C9C00;
+}
+
+/* Green Glass Card */
+.forest-glass {
+  background: linear-gradient(
+    135deg,
+    rgba(60, 84, 16, 0.96) 0%,
+    rgba(26, 36, 24, 0.99) 100%
+  );
+  border: 1px solid rgba(162, 203, 43, 0.3);
+}
+
+/* Green Gradient Text */
+.gold-gradient-text {
+  background: linear-gradient(
+    135deg,
+    #A2CB2B 0%,
+    #6C9C00 50%,
+    #3C5410 100%
+  );
+
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+@keyframes lorryMoving {
+  from {
+    transform: translateX(-550px);
+  }
+
+  to {
+    transform: translateX(100vw);
+  }
+}
+
+.lorry-moving {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 550px;
+  height: auto;
+  display: block;
+  opacity: 1;
+  visibility: visible;
+  object-fit: contain;
+  animation: lorryMoving 18s linear infinite;
+  will-change: transform;
+}
+@keyframes lorryRightToLeft {
+  from {
+    transform: translateX(100vw);
+  }
+  to {
+    transform: translateX(-400px);
+  }
+}

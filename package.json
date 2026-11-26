@@ -1,0 +1,21 @@
+{
+  "name": "aarvix-transport-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "AARVIX TRANSPORT — Master Monorepo for Lorry Booking & Logistics Management Platform",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "dev": "npm run dev:web",
+    "dev:web": "npm run dev --workspace=@aarvix/web",
+    "dev:mobile": "npm run web --workspace=@aarvix/mobile",
+    "build:web": "npm run build --workspace=@aarvix/web",
+    "build:shared": "npm run build --workspace=@aarvix/shared",
+    "typecheck": "npm run typecheck --workspace=@aarvix/shared && npm run typecheck --workspace=@aarvix/web"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.4"
+  }
+}

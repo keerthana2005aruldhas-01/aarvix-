@@ -1,0 +1,22 @@
+rules_version = '2';
+service firebase.storage {
+  match /b/{bucket}/o {
+    // Delivery proofs & POD documents
+    match /proofs/{bookingId}/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.resource.size < 10 * 1024 * 1024; // 10MB max
+    }
+
+    // Driver & vehicle documents (KYC, RC, Fitness, Permits)
+    match /documents/{userId}/{allPaths=**} {
+      allow read: if request.auth != null;
+      allow write: if request.auth != null && request.auth.uid == userId && request.resource.size < 15 * 1024 * 1024;
+    }
+
+    // Public catalog vehicle assets
+    match /public/{allPaths=**} {
+      allow read: if true;
+      allow write: if request.auth != null && request.auth.token.admin == true;
+    }
+  }
+}
